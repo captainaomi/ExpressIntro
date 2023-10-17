@@ -16,6 +16,10 @@ app.get("/", (request, response) => {
 
 });
 
+
+const someImportedRouter = require("./controllers/PokemonController.js");
+app.use("/pokemon", someImportedRouter);
+
 // Configure the server -- happens all above this line ^^^
 
 // Activate the server -- happens all below this line vvv
