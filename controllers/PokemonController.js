@@ -7,8 +7,19 @@ const router = express.Router();
 router.get("/", (request, response) => {
     response.json({
         message: "Hello world from a router!"
-        });
     });
+});
+
+router.get("/bananas", async (request, response) => {
+    
+    let result = await fetch("https://pokeapi.co/api/v2/pokemon/25");
+    let data = await result.json();
+
+    response.json({
+        message: "Bananas!",
+        pokemonName: data.name
+    });
+});
 
 
 // CREATE out of CRUD

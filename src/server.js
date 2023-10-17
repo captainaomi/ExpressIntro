@@ -20,10 +20,10 @@ app.get("/", (request, response) => {
 const someImportedRouter = require("./controllers/PokemonController.js");
 app.use("/pokemon", someImportedRouter);
 
+module.exports = {
+    app, 
+    HOST, 
+    PORT
+}
+
 // Configure the server -- happens all above this line ^^^
-
-// Activate the server -- happens all below this line vvv
-
-app.listen(PORT, HOST, () => {
-    console.log("Server is running on port: " + PORT);
-});
